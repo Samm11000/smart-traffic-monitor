@@ -1,0 +1,15 @@
+# Don't send these to Docker build context
+.git
+.github
+*.pem
+*.key
+data/*.mp4
+logs/*.csv
+__pycache__
+*.pyc
+*.pyo
+.env
+.DS_Store
+Thumbs.db
+README.md
+start.sh

@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "Starting Smart Traffic Monitor on EC2..."
-cd /home/ubuntu/smart-traffic-monitor
+cd /home/ubuntu/smart-traffic-monitor/smart-traffic-monitor
 git pull origin main
 docker-compose down
 docker-compose up --build -d

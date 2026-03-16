@@ -4,6 +4,10 @@
 data/traffic.mp4
 data/*.mp4
 
+# YOLO model weights (auto-downloaded on first run)
+yolov8n.pt
+*.pt
+
 # Runtime logs
 logs/*.csv
 
