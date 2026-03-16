@@ -1,6 +1,47 @@
+# version: "3.8"
+
+# services:
+
+#   fog:
+#     build: .
+#     container_name: fog_server
+#     command: python fog/fog_server.py
+#     ports:
+#       - "5000:5000"
+#     volumes:
+#       - ./logs:/app/logs
+#     restart: always
+#     healthcheck:
+#       test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+#       interval: 30s
+#       timeout: 10s
+#       retries: 3
+
+#   dashboard:
+#     build: .
+#     container_name: dashboard
+#     command: streamlit run dashboard/app.py --server.port=8501 --server.address=0.0.0.0
+#     ports:
+#       - "8501:8501"
+#     environment:
+#       - FOG_HOST=fog
+#     depends_on:
+#       - fog
+#     restart: always
+
+
 version: "3.8"
 
 services:
+
+  edge:
+    build: .
+    container_name: edge_detector
+    command: python edge/edge_detector.py
+    volumes:
+      - ./logs:/app/logs
+      - ./data:/app/data      # video file lives here
+    restart: "no"             # runs once per video, doesn't loop forever
 
   fog:
     build: .
@@ -9,7 +50,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./logs:/app/logs
+      - ./logs:/app/logs      # shares same logs folder as edge
     restart: always
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:5000/health"]

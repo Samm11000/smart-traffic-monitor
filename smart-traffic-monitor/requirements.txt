@@ -1,6 +1,6 @@
-flask
-requests
-pandas
-streamlit
 ultralytics
 opencv-python-headless
+flask
+requests
+streamlit
+pandas
