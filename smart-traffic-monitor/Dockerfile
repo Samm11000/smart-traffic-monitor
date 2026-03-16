@@ -45,4 +45,4 @@ COPY . .
 RUN mkdir -p logs data
 
 EXPOSE 5000 8501
-```
+
