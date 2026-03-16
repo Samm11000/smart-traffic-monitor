@@ -1,0 +1,28 @@
+# .gitignore
+
+# Video file (too large for GitHub)
+data/traffic.mp4
+data/*.mp4
+
+# Runtime logs
+logs/*.csv
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+env/
+
+# AWS key (NEVER push this)
+*.pem
+*.key
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
